@@ -4,7 +4,7 @@ function MovingRect(posVector, rectNr) {
 	this.objClass = "notFixed";
 	this.vel = createVector(0, 0);
 	this.acc = createVector(0, 0);
-	this.side = 85;
+	this.side = 75;
 	this.rectStrokeValue = 255;
 	bounceSlider = createSlider(90.00, 200.00, 200.00);
 	bounceSlider.position(20 + bounceSlider.width * rectNr,20);
