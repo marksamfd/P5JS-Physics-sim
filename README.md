@@ -6,6 +6,7 @@ To run this application, no further installations are needed, just launch it wit
 
 * [NodeJs](https://nodejs.org/en/)
 * [BrowserSync](https://browsersync.io/)
+
 You can simply install browsersync after NodeJS is downloaded, by running this command in the terminal 
 ```
 npm install -g browser-sync
