@@ -22,6 +22,9 @@ function setup() {
 
 	gravityForceSlider = createSlider(0, 100, 0);
 	gravityForceSlider.position(20,80);
+
+	bounceSlider = createSlider(90.00, 200.00, 200.00);
+	bounceSlider.position(20,20);
 }
 
 
@@ -36,6 +39,7 @@ function draw() {
 	airResistanceRect1 = createVector( (rectangle.vel.x * -1) * airResistanceSlider.value() / 100, (rectangle.vel.y * -1) * airResistanceSlider.value() / 100);
 	airResistanceRect2 = createVector( (rectangle2.vel.x * -1) * airResistanceSlider.value() / 100, (rectangle2.vel.y * -1) * airResistanceSlider.value() / 100);
 	text("airResistance", airResistanceSlider.x * 2 + airResistanceSlider.width, 65);
+	text("bounce", bounceSlider.x * 2 + bounceSlider.width, 35);
 
 
 
@@ -101,12 +105,13 @@ function draw() {
   	}
 
 
-
+  	rectangle.bounceForce(bounceSlider.value());
 	rectangle.applyForce(airResistanceRect1);
 	rectangle.applyForce(gravity);
 	rectangle.update();
 
 
+	rectangle2.bounceForce(bounceSlider.value());
 	rectangle2.applyForce(airResistanceRect2);
 	rectangle2.applyForce(gravity);
 	rectangle2.update();

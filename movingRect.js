@@ -6,8 +6,6 @@ function MovingRect(posVector, rectNr) {
 	this.acc = createVector(0, 0);
 	this.side = 75;
 	this.rectStrokeValue = 255;
-	bounceSlider = createSlider(90.00, 200.00, 200.00);
-	bounceSlider.position(20 + bounceSlider.width * rectNr,20);
 
 
 	this.applyForce = function(p5Vector) {
@@ -22,7 +20,6 @@ function MovingRect(posVector, rectNr) {
 	}
 
 	this.update = function() {
-		
 		this.vel.add(this.acc);
 		this.pos.add(this.vel);
 		this.vel.limit(10);
@@ -30,10 +27,13 @@ function MovingRect(posVector, rectNr) {
 		this.edges();
 	}
 
+	this.bounceForce = function(bounceSlider) {
+		this.bounce = bounceSlider / 100;
+	}
+
 	this.draw = function() {
 		text(String(rectNr), this.pos.x + this.side/2, this.pos.y + this.side/2);
-		text("bounce", bounceSlider.x * 2 * rectNr + bounceSlider.width, 35);
-		this.bounce = bounceSlider.value() / 100;
+		
 		rect(this.pos.x, this.pos.y, this.side, this.side);
 		noFill();
 		strokeWeight(1);
