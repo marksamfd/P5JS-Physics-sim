@@ -7,12 +7,12 @@ To run this application, no further installations are needed, just launch it wit
 * [NodeJs](https://nodejs.org/en/)
 * [BrowserSync](https://browsersync.io/)
 
-You can simply install browsersync after NodeJS is downloaded, by running this command in the terminal 
+You can simply install browsersync after NodeJS is setup, by running this command in the terminal 
 ```
 npm install -g browser-sync
 ```
 ## Controlls
-You can controll the objects by using they keys: **WSAD** and **ARROWS**, ARROWS for object number 1 and WSAD for object number 2
+You can controll the objects by using they keys: **WSAD** for object 2 and **ARROWS** for object 1
 
 ## Version history
 Version number is the date that the particullar version was released on
