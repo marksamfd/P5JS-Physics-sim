@@ -17,6 +17,11 @@ You can controll the objects by using they keys: **WSAD** for object 2 and **ARR
 ## Version history
 Version number is the date that the particullar version was released on
 
+### V2018-11-06
+* Updated collision logic
+* Implemented mass
+* Implemented impact force
+
 ### V2018-10-25
 * Basic collision detection and response is implemented
 * Three sliders added to adjust forces acting on the objects - bounce, airResistance and gravityForce
