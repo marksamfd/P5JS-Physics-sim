@@ -108,12 +108,14 @@ function draw() {
   	rectangle.bounceForce(bounceSlider.value());
 	rectangle.applyForce(airResistanceRect1);
 	rectangle.applyForce(gravity);
-	rectangle.update();
+	//rectangle.update();
 
 
 	rectangle2.bounceForce(bounceSlider.value());
 	rectangle2.applyForce(airResistanceRect2);
 	rectangle2.applyForce(gravity);
+
+	rectangle.update();
 	rectangle2.update();
 
 
@@ -124,15 +126,14 @@ function draw() {
 		colliderSide = colliderCheck.collisionSide;
 		colliderSide2 = colliderCheck2.collisionSide;
 
-		console.log("rect1: ",colliderSide);
-		console.log("rect2: ",colliderSide2);
+		//console.log("rect1: ",colliderSide);
+		//console.log("rect2: ",colliderSide2);
 		rectangle.collide(rectangle2, colliderSide);
 		rectangle2.collide(rectangle, colliderSide2);
 	}
 
-
-	rectangle.draw();
 	rectangle2.draw();
+	rectangle.draw();
 
 
 
@@ -148,9 +149,9 @@ function draw() {
   // 	if (keyIsDown(88)) { //X
 		// console.log("BothvectorLineInBoxLength: ",vectorLineInBoxLengthObj1 +vectorLineInBoxLengthObj2);
   // 	}
-  // 	if (keyIsDown(67)) { //C
-		// console.clear();
-  // 	}
+  	if (keyIsDown(67)) { //C
+		console.clear();
+  	}
   // 	if (keyIsDown(77)) { //M
   // 		console.log(moveUp, moveRight, moveDown, moveLeft);
   // 	}
