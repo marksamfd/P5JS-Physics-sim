@@ -18,7 +18,7 @@ You can controll the objects by using they keys: **WSAD** for object 2 and **ARR
 Version number is the date that the particullar version was released on
 
 ### V2018-11-06
-* Updated collision logic
+* Updated collision response logic
 * Implemented mass
 * Implemented impact force
 
