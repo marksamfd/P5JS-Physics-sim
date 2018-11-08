@@ -4,6 +4,7 @@ function setup() {
 	rectangle2PosVector = createVector(110, 100);
 	rectangle = new MovingRect(rectanglePosVector, 1);
 	rectangle2 = new MovingRect(rectangle2PosVector, 2);
+	//rectangle2.side = 50;
 	//fixedRect = new StationaryRect();
 	//airResistanceForce = 0.01;
 	//colliderCheck = new CollisionDetectionSquares(rectangle, fixedRect);

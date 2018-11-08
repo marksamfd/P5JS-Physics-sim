@@ -4,7 +4,7 @@ function MovingRect(posVector, rectNr) {
 	this.objClass = "notFixed";
 	this.vel = createVector(0, 0);
 	this.acc = createVector(0, 0);
-	this.side = 75;
+	this.side = 115;
 	this.rectStrokeValue = 255;
 	this.mass = this.side;
 
@@ -21,7 +21,7 @@ function MovingRect(posVector, rectNr) {
 		//this.edges();
 		this.vel.add(this.acc);
 		this.pos.add(this.vel);
-		this.vel.limit(10);
+		//this.vel.limit(10);
 		this.acc.mult(0);
 		this.edges();
 
@@ -49,10 +49,10 @@ function MovingRect(posVector, rectNr) {
 
 	this.collide = function(obj) {
 		//IF COLLIDING WITH A FIXED OBJECT - DEFLECT ALL THE FORCE, OTHERWISE, COUNT THE FORCE AND USE IT TO DEFLECT THE OTHER OBJECT 
-		movingOutOfCollisionUp = createVector(0, -this.side + Math.abs(this.pos.y - obj.pos.y));
-		movingOutOfCollisionDown = createVector(0, obj.side - Math.abs(this.pos.y - obj.pos.y));
-		movingOutOfCollisionLeft = createVector(-this.side + Math.abs(this.pos.x - obj.pos.x), 0);
-		movingOutOfCollisionRight = createVector(obj.side - Math.abs(this.pos.x - obj.pos.x), 0);
+		movingOutOfCollisionUp = createVector(0, - ( (this.side + obj.side) / 2) + Math.abs(this.pos.y - obj.pos.y));
+		movingOutOfCollisionDown = createVector(0, (obj.side + this.side) / 2 - Math.abs(this.pos.y - obj.pos.y));
+		movingOutOfCollisionLeft = createVector(-( (this.side + obj.side) / 2) + Math.abs(this.pos.x - obj.pos.x), 0);
+		movingOutOfCollisionRight = createVector((obj.side + this.side) / 2 - Math.abs(this.pos.x - obj.pos.x), 0);
 
 
 
